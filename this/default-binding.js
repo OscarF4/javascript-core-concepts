@@ -1,7 +1,7 @@
 //When a Global function is called THIS is equal to Window. In 'Strict Mode' it's equal to UNDEFINED
 'use strict';
 
-function quienSoy() {
+function quienSoy () {
     console.log(`Hola, soy: ${this}`);
 }
 quienSoy();
@@ -10,7 +10,7 @@ quienSoy();
 const oscar = {
     name: 'Oscar',
     twitter: '@oscarvedo',
-    saludar: function() {
+    saludar: function () {
         function siguemeEnTwitter() {
             console.log(`Sígueme en Twitter: ${this.twitter}`);
         }
