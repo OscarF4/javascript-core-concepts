@@ -9,4 +9,4 @@ const oscar = {
 }
 
 const button = document.getElementById('clickButton');
-button.addEventListener('click', oscar.saludar); //This es el elemento 'Button'
+button.addEventListener('click', oscar.saludar.bind(oscar)); //This es el objeto Oscar
