@@ -1,3 +1,36 @@
+class Comment {
+    constructor({
+        username,
+        comment
+    }) {
+        this.username = username;
+        this.comment = comment;
+    }
+}
+
+const primerComentario = new Comment({
+    username: 'oscarvedo',
+    comment: 'Este es el primer comentario'
+});
+
+class Class {
+    constructor({
+        name,
+        duration,
+        comments = []
+    }) {
+        this.name = name;
+        this.duration = duration;
+        this.comments = comments;
+    }
+}
+
+const claseIntroductoria = new Class ({
+    name: 'Introducción a los computadores',
+    duration: 3,
+    comments: primerComentario
+});
+
 class Course {
     constructor({
         name,
@@ -10,18 +43,38 @@ class Course {
 
 const cursoProgBasica = new Course({
     name: 'Curso Gratis de Programación Básica',
-    clases: []
-})
+    classes: [claseIntroductoria]
+});
 
 const cursoDefinitivoHTML = new Course({
     name: 'Curso Definitivo de HTML y CSS',
-    clases: []
-})
+    classes: [claseIntroductoria]
+});
 
 const cursoPracticoHTML = new Course({
     name: 'Curso Practico de HTML y CSS',
-    clases: []
-})
+    classes: [claseIntroductoria]
+});
+
+const cursoDataBusiness = new Course({
+    name: 'Curso de DataBusiness',
+    classes: []
+});
+
+const cursoDataViz = new Course({
+    name: 'Curso de Dataviz',
+    classes: []
+});
+
+const cursoUnity = new Course({
+    name: 'Curso de Unity 3D',
+    classes: []
+});
+
+const cursoUnreal = new Course({
+    name: 'Curso de Unreal Engine',
+    classes: []
+});
 
 class learningPath {
     constructor({
@@ -58,8 +111,8 @@ const escuelaData = new learningPath({
     category: 'Tecnología',
     courses: [
         cursoProgBasica,
-        'Curso de DataBusiness', 
-        'Curso de Dataviz'
+        cursoDataBusiness, 
+        cursoDataViz
     ]
 });
 
@@ -70,8 +123,8 @@ const escuelaVgs = new learningPath({
     category: 'Tecnología',
     courses: [
         cursoProgBasica,
-        'Curso de Unity', 
-        'Curso de Unreal Engine'
+        cursoUnity, 
+        cursoUnreal
     ]
 });
 
