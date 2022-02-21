@@ -1,3 +1,28 @@
+class Course {
+    constructor({
+        name,
+        classes = []
+    }) {
+        this.name = name;
+        this.classes = classes;
+    }
+}
+
+const cursoProgBasica = new Course({
+    name: 'Curso Gratis de Programación Básica',
+    clases: []
+})
+
+const cursoDefinitivoHTML = new Course({
+    name: 'Curso Definitivo de HTML y CSS',
+    clases: []
+})
+
+const cursoPracticoHTML = new Course({
+    name: 'Curso Practico de HTML y CSS',
+    clases: []
+})
+
 class learningPath {
     constructor({
         id,
@@ -12,10 +37,6 @@ class learningPath {
         this.category = category;
         this.courses = courses;
     }
-
-    aprobarRuta() {
-        console.log(`Felicitaciones, aprobaste la ruta: ${this.name}`);
-    }
 }
 
 const escuelaWeb = new learningPath({
@@ -23,7 +44,35 @@ const escuelaWeb = new learningPath({
     name: 'Escuela de Desarrollo Web',
     description: 'Aprende desarrollo web ya',
     category: 'Tecnología',
-    courses: ['HTML Básico', 'CSS Avanzado', 'Javascript Profesional']
+    courses: [
+        cursoProgBasica, 
+        cursoDefinitivoHTML, 
+        cursoPracticoHTML
+    ]
+});
+
+const escuelaData = new learningPath({
+    id: 2,
+    name: 'Escuela de Data Science',
+    description: 'Aprende Data Science ya',
+    category: 'Tecnología',
+    courses: [
+        cursoProgBasica,
+        'Curso de DataBusiness', 
+        'Curso de Dataviz'
+    ]
+});
+
+const escuelaVgs = new learningPath({
+    id: 3,
+    name: 'Escuela de Videojuegos',
+    description: 'Aprende a hacer Videojuegos ya',
+    category: 'Tecnología',
+    courses: [
+        cursoProgBasica,
+        'Curso de Unity', 
+        'Curso de Unreal Engine'
+    ]
 });
 
 class Student {
@@ -55,5 +104,8 @@ const oscar = new Student({
     username: 'oscarvedo',
     email: 'oscar@gmail.com' ,
     instagram: 'oscarvedo',
-    learningPaths: escuelaWeb
+    learningPaths: [
+        escuelaWeb,
+        escuelaVgs
+    ]
 });
