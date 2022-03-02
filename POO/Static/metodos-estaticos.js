@@ -8,16 +8,38 @@ const oscar = {
     }
 };
 
-console.log(Object.keys(oscar));
-console.log(Object.getOwnPropertyNames(oscar));
-console.log(Object.entries(oscar));
+// console.log(Object.keys(oscar));
+// console.log(Object.getOwnPropertyNames(oscar));
+// console.log(Object.entries(oscar));
 
-console.log(Object.getOwnPropertyDescriptors(oscar));
 
 //Crear propiedades en nuestro objeto, pudiendo editar los DESCRIPTORS
 Object.defineProperty(oscar, 'pruebaNasa', {
     value: 'Extraterrestres',
+    writable: false,
+    enumerable: false,
+    configurable: false
+});
+
+Object.defineProperty(oscar, 'navigator', {
+    value: 'Chrome',
     writable: true,
+    enumerable: false,
+    configurable: true
+});
+
+Object.defineProperty(oscar, 'editor', {
+    value: 'VSCode',
+    writable: false,
     enumerable: true,
     configurable: true
 });
+
+Object.defineProperty(oscar, 'terminal', {
+    value: 'WSL',
+    writable: true,
+    enumerable: true,
+    configurable: false
+});
+
+console.log(Object.getOwnPropertyDescriptors(oscar));
