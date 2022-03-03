@@ -58,3 +58,42 @@ Object.seal(oscar);
 // });
 
 console.log(oscar);
+
+
+//Factory Pattern y RORO
+function requiredParam(param) {
+    throw new Error(`${param} es obligatorio`);
+}
+
+function createStudent({
+    name = requiredParam('name'), //Cuando no se envie el parametro
+    email = requiredParam('email'),
+    age,
+    twitter,
+    instagram,
+    facebook,
+    approvedCourses = [],
+    learningPaths = []
+} = {}) { //Para que no pare la ejecucion sin argumentos
+    return {
+        name,
+        age,
+        email,
+        approvedCourses,
+        learningPaths,
+        socialMedia: {
+            twitter,
+            instagram,
+            facebook
+        }
+    }
+}
+
+const juan = createStudent({
+    name: 'Juanito',
+    age: 18,
+    email: 'juanito@frijolitos.com',
+    twitter: 'fjuandc'
+});
+
+console.log(juan);
